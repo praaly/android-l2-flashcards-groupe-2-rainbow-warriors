@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
                                   Intent intent = new Intent(MainActivity.this, FlashcardActivity.class);
                                   intent.putExtra("flashcard", flashcard);
                                   startActivity(intent);
+                                  dialog.dismiss();
                                   break;
                               case 1:
                                   Toast.makeText(MainActivity.this, "Moyen", Toast.LENGTH_SHORT).show();
@@ -56,8 +57,8 @@ public class MainActivity extends AppCompatActivity {
                       }
                   });
                   AlertDialog alert = alertDialog.create();
-                  alert.setCanceledOnTouchOutside(false);
                   alert.show();
+                  alert.setCanceledOnTouchOutside(true);
               }
         });
 
