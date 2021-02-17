@@ -1,0 +1,71 @@
+{
+  "Facile": [
+    {
+      "questionText": "Quelle est cette arme ?",
+      "isPicture": true,
+      "sourceName": "ak_47",
+      "answers": [
+        "Fusil automatique",
+        "Fusil à verrou",
+        "Fusil de chasse"
+      ]
+    },
+
+    {
+      "questionText": "Quelle est cette arme ?",
+      "isPicture": true,
+      "sourceName": "ak_47",
+      "answers": [
+        "Fusil à pompe",
+        "Fusil sniper"
+      ]
+    }
+  ],
+
+  "Moyen": [
+    {
+      "questionText": "Quelle est cette arme ?",
+      "isPicture": true,
+      "sourceName": "ak_47",
+      "answers": [
+        "Fusil automatique",
+        "Fusil à verrou",
+        "Fusil de chasse"
+      ]
+    },
+
+    {
+      "questionText": "Quelle est cette arme ?",
+      "isPicture": true,
+      "sourceName": "ak_47",
+      "answers": [
+        "Fusil à pompe",
+        "Fusil sniper"
+      ]
+    }
+  ],
+
+  "Difficile": [
+    {
+      "questionText": "Quelle est cette arme ?",
+      "isPicture": true,
+      "sourceName": "ak_47",
+      "answers": [
+        "Fusil automatique",
+        "Fusil à verrou",
+        "Fusil de chasse"
+      ]
+    },
+
+    {
+      "questionText": "Quelle est cette arme ?",
+      "isPicture": true,
+      "sourceName": "ak_47",
+      "answers": [
+        "Fusil à pompe",
+        "Fusil sniper"
+      ]
+    }
+  ]
+
+}
