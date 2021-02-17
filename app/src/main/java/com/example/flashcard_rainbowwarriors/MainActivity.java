@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,10 +20,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        HashMap<Integer, String> hash = new HashMap<Integer, String>();
-        hash.put(0, "Réponse 1");
-        hash.put(1, "Réponse 2");
-        Flashcard flashcard = new Flashcard("Question", 0, 0, hash, 0);
+        ArrayList<String> list = new ArrayList<String>();
+        list.add("Réponse 1");
+        list.add("Réponse 2");
+        Flashcard flashcard = new Flashcard("Question", 0, 0, list, 0);
 
         findViewById(R.id.startButton).setOnClickListener(new View.OnClickListener() {
 

@@ -3,16 +3,16 @@ package com.example.flashcard_rainbowwarriors;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 
 public class Flashcard implements Parcelable {
     String question;
     int picture;
     int sound;
-    HashMap<Integer, String> answers;
+    ArrayList<String> answers;
     int indexRightAnswer;
 
-    public Flashcard(String question, int picture, int sound, HashMap<Integer, String> answers, int indexRightAnswer) {
+    public Flashcard(String question, int picture, int sound, ArrayList<String> answers, int indexRightAnswer) {
         this.question = question;
         this.picture = picture;
         this.sound = sound;
@@ -20,12 +20,20 @@ public class Flashcard implements Parcelable {
         this.indexRightAnswer = indexRightAnswer;
     }
 
+    protected Flashcard(Parcel in) {
+        question = in.readString();
+        picture = in.readInt();
+        sound = in.readInt();
+        answers = in.createStringArrayList();
+        indexRightAnswer = in.readInt();
+    }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(question);
         dest.writeInt(picture);
         dest.writeInt(sound);
+        dest.writeStringList(answers);
         dest.writeInt(indexRightAnswer);
     }
 
@@ -62,14 +70,10 @@ public class Flashcard implements Parcelable {
         return sound;
     }
 
-    public HashMap<Integer, String> getAnswers() {
+    public ArrayList<String> getAnswers() {
         return answers;
     }
 
-    protected Flashcard(Parcel in) {
-        question = in.readString();
-        picture = in.readInt();
-        sound = in.readInt();
-    }
+
 
 }
