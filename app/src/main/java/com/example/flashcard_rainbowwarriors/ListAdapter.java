@@ -1,5 +1,7 @@
 package com.example.flashcard_rainbowwarriors;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,6 +32,9 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> im
     public void onBindViewHolder(@NonNull ListAdapter.ViewHolder holder, int position) {
         Flashcard flashcard = flashcards.get(position);
         holder.question.setText(flashcard.getQuestion());
+
+        holder.itemView.setTag(flashcard);
+        holder.itemView.setOnClickListener(this);
     }
 
     @Override
@@ -39,7 +44,15 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> im
 
     @Override
     public void onClick(View v) {
-
+        switch (v.getId()) {
+            case R.id.rootItem:
+                Context context = v.getContext();
+                Flashcard flashcards = (Flashcard) v.getTag();
+                Intent intent = new Intent(context, FlashcardActivity.class);
+                intent.putExtra("flashcard", flashcards);
+                context.startActivity(intent);
+                break;
+        }
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

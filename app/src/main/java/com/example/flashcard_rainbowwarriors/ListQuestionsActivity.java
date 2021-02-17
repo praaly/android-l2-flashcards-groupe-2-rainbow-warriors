@@ -19,6 +19,7 @@ public class ListQuestionsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_questions);
 
+        //TODO recevoir toutes les flashcards
 //        Intent intent = getIntent();
 //        Flashcard flashcard = intent.getParcelableExtra("flashcard");
 
