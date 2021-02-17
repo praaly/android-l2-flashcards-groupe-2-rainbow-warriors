@@ -13,6 +13,46 @@ public class Flashcard implements Parcelable {
     ArrayList<Answer> answers;
     int indexRightAnswer; //useless, might delete
 
+    public String getQuestionText() {
+        return questionText;
+    }
+
+    public void setQuestionText(String questionText) {
+        this.questionText = questionText;
+    }
+
+    public String getSourceType() {
+        return sourceType;
+    }
+
+    public void setSourceType(String sourceType) {
+        this.sourceType = sourceType;
+    }
+
+    public String getSourceName() {
+        return sourceName;
+    }
+
+    public void setSourceName(String sourceName) {
+        this.sourceName = sourceName;
+    }
+
+    public ArrayList<Answer> getAnswers() {
+        return answers;
+    }
+
+    public void setAnswers(ArrayList<Answer> answers) {
+        this.answers = answers;
+    }
+
+    public int getIndexRightAnswer() {
+        return indexRightAnswer;
+    }
+
+    public void setIndexRightAnswer(int indexRightAnswer) {
+        this.indexRightAnswer = indexRightAnswer;
+    }
+
     public Flashcard(String questionText, String sourceType, String sourceName, ArrayList<Answer> answers, int indexRightAnswer) {
         this.questionText = questionText;
         this.sourceType = sourceType;
