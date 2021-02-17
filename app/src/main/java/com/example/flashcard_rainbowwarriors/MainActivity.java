@@ -20,10 +20,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ArrayList<String> list = new ArrayList<String>();
-        list.add("Réponse 1");
-        list.add("Réponse 2");
-        Flashcard flashcard = new Flashcard("Question", 0, 0, list, 0);
+        ArrayList<Answer> list = new ArrayList<Answer>();
+        list.add(new Answer(true, "Réponse 1"));
+        list.add(new Answer(false, "Réponse 2"));
+        Flashcard flashcard = new Flashcard("Question", "SourceType", "SourceName", list, 0);
 
         findViewById(R.id.startButton).setOnClickListener(new View.OnClickListener() {
 
