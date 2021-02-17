@@ -26,13 +26,23 @@ public class MainActivity extends AppCompatActivity {
         Flashcard flashcard = new Flashcard("Question", "SourceType", "SourceName", list, 0);
 
         findViewById(R.id.startButton).setOnClickListener(new View.OnClickListener() {
-
           @Override
           public void onClick(View v) {
               Intent intent = new Intent(MainActivity.this, FlashcardActivity.class);
               intent.putExtra("flashcard", flashcard);
               startActivity(intent);
           }
+        });
+
+        Button listOfQuestions = findViewById(R.id.listButton);
+        listOfQuestions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ListQuestionsActivity.class);
+                //TODO retrieve all flashcards and send it to the ListQuestionsActivity
+                //intent.putExtra("flashcard", flashcard);
+                startActivity(intent);
+            }
         });
 
         /*
