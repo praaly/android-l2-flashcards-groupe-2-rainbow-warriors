@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<Answer> list = new ArrayList<Answer>();
         list.add(new Answer(true, "Réponse 1"));
         list.add(new Answer(false, "Réponse 2"));
-        Flashcard flashcard = new Flashcard("Question", "SourceType", "SourceName", list, 0);
+        Flashcard flashcard = new Flashcard("Question", "SourceType", "SourceName", list);
 
         findViewById(R.id.startButton).setOnClickListener(new View.OnClickListener() {
           @Override
