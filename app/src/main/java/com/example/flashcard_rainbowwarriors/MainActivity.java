@@ -1,14 +1,17 @@
 package com.example.flashcard_rainbowwarriors;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,10 +31,34 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.startButton).setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
-              Intent intent = new Intent(MainActivity.this, FlashcardActivity.class);
-              intent.putExtra("flashcard", flashcard);
-              startActivity(intent);
-          }
+
+                  AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
+                  alertDialog.setTitle("Choisir la difficulté");
+                  String[] items = {"Facile","Moyen","Difficile"};
+                  int checkedItem = 1;
+                  alertDialog.setSingleChoiceItems(items, checkedItem, new DialogInterface.OnClickListener() {
+                      @Override
+                      public void onClick(DialogInterface dialog, int which) {
+                          switch (which) {
+                              case 0:
+                                  Toast.makeText(MainActivity.this, "Facile", Toast.LENGTH_SHORT).show();
+                                  Intent intent = new Intent(MainActivity.this, FlashcardActivity.class);
+                                  intent.putExtra("flashcard", flashcard);
+                                  startActivity(intent);
+                                  break;
+                              case 1:
+                                  Toast.makeText(MainActivity.this, "Moyen", Toast.LENGTH_SHORT).show();
+                                  break;
+                              case 2:
+                                  Toast.makeText(MainActivity.this, "Difficile", Toast.LENGTH_SHORT).show();
+                                  break;
+                          }
+                      }
+                  });
+                  AlertDialog alert = alertDialog.create();
+                  alert.setCanceledOnTouchOutside(false);
+                  alert.show();
+              }
         });
 
         Button listOfQuestions = findViewById(R.id.listButton);
