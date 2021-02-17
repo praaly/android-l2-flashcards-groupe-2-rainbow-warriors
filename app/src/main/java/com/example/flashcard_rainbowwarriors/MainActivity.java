@@ -39,21 +39,11 @@ public class MainActivity extends AppCompatActivity {
                   alertDialog.setSingleChoiceItems(items, checkedItem, new DialogInterface.OnClickListener() {
                       @Override
                       public void onClick(DialogInterface dialog, int which) {
-                          switch (which) {
-                              case 0:
-                                  Toast.makeText(MainActivity.this, "Facile", Toast.LENGTH_SHORT).show();
-                                  Intent intent = new Intent(MainActivity.this, FlashcardActivity.class);
-                                  intent.putExtra("flashcard", flashcard);
-                                  startActivity(intent);
-                                  dialog.dismiss();
-                                  break;
-                              case 1:
-                                  Toast.makeText(MainActivity.this, "Moyen", Toast.LENGTH_SHORT).show();
-                                  break;
-                              case 2:
-                                  Toast.makeText(MainActivity.this, "Difficile", Toast.LENGTH_SHORT).show();
-                                  break;
-                          }
+                          Toast.makeText(MainActivity.this, items[which], Toast.LENGTH_SHORT).show();
+                          Intent intent = new Intent(MainActivity.this, FlashcardActivity.class);
+                          intent.putExtra("flashcard", flashcard);
+                          startActivity(intent);
+                          dialog.dismiss();
                       }
                   });
                   AlertDialog alert = alertDialog.create();
