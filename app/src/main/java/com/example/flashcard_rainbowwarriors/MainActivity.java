@@ -98,7 +98,6 @@ public class MainActivity extends AppCompatActivity {
          *Modifies UI to either white or black mode for users.
          * */
         Button darkMode = findViewById(R.id.darkmodeButton);
-        ImageView pictureDog = findViewById(R.id.homeImageView);
         isNightMode = false;
 
         darkMode.setOnClickListener(new View.OnClickListener() {
@@ -109,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
                     isNightMode = false;
                 } else {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                    pictureDog.setImageResource(R.drawable.home_gun_night);
+
                     isNightMode = true;
                 }
             }
